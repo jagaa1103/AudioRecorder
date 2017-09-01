@@ -14,6 +14,8 @@
 		11EF8A381F593076004AAE76 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11EF8A361F593076004AAE76 /* LaunchScreen.storyboard */; };
 		11EF8A431F593076004AAE76 /* AudioRecorderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF8A421F593076004AAE76 /* AudioRecorderUITests.swift */; };
 		11EF8A4E1F593C80004AAE76 /* RecordingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF8A4D1F593C80004AAE76 /* RecordingService.swift */; };
+		11EF8A501F594092004AAE76 /* FileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11EF8A4F1F594092004AAE76 /* FileService.swift */; };
+		11EF8A531F5953EC004AAE76 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11EF8A521F5953EC004AAE76 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,9 @@
 		11EF8A421F593076004AAE76 /* AudioRecorderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorderUITests.swift; sourceTree = "<group>"; };
 		11EF8A441F593076004AAE76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11EF8A4D1F593C80004AAE76 /* RecordingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingService.swift; sourceTree = "<group>"; };
+		11EF8A4F1F594092004AAE76 /* FileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileService.swift; sourceTree = "<group>"; };
+		11EF8A521F5953EC004AAE76 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		11EF8A541F5955CA004AAE76 /* AudioRecorder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AudioRecorder.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				11EF8A531F5953EC004AAE76 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,6 +70,7 @@
 				11EF8A2C1F593076004AAE76 /* AudioRecorder */,
 				11EF8A411F593076004AAE76 /* AudioRecorderUITests */,
 				11EF8A2B1F593076004AAE76 /* Products */,
+				11EF8A511F5953EC004AAE76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +86,7 @@
 		11EF8A2C1F593076004AAE76 /* AudioRecorder */ = {
 			isa = PBXGroup;
 			children = (
+				11EF8A541F5955CA004AAE76 /* AudioRecorder.entitlements */,
 				11EF8A2D1F593076004AAE76 /* AppDelegate.swift */,
 				11EF8A2F1F593076004AAE76 /* ViewController.swift */,
 				11EF8A311F593076004AAE76 /* Main.storyboard */,
@@ -86,6 +94,7 @@
 				11EF8A361F593076004AAE76 /* LaunchScreen.storyboard */,
 				11EF8A391F593076004AAE76 /* Info.plist */,
 				11EF8A4D1F593C80004AAE76 /* RecordingService.swift */,
+				11EF8A4F1F594092004AAE76 /* FileService.swift */,
 			);
 			path = AudioRecorder;
 			sourceTree = "<group>";
@@ -97,6 +106,14 @@
 				11EF8A441F593076004AAE76 /* Info.plist */,
 			);
 			path = AudioRecorderUITests;
+			sourceTree = "<group>";
+		};
+		11EF8A511F5953EC004AAE76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11EF8A521F5953EC004AAE76 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +166,11 @@
 				TargetAttributes = {
 					11EF8A291F593076004AAE76 = {
 						CreatedOnToolsVersion = 9.0;
+						SystemCapabilities = {
+							com.apple.InterAppAudio = {
+								enabled = 0;
+							};
+						};
 					};
 					11EF8A3D1F593076004AAE76 = {
 						CreatedOnToolsVersion = 9.0;
@@ -201,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11EF8A4E1F593C80004AAE76 /* RecordingService.swift in Sources */,
+				11EF8A501F594092004AAE76 /* FileService.swift in Sources */,
 				11EF8A301F593076004AAE76 /* ViewController.swift in Sources */,
 				11EF8A2E1F593076004AAE76 /* AppDelegate.swift in Sources */,
 			);

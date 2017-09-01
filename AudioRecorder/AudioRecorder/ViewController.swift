@@ -11,10 +11,12 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var recordBtn: UIButton!
+    @IBOutlet weak var statusLabel: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        RecordingService.instance.requestPermission()
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +26,15 @@ class ViewController: UIViewController {
 
     
     @IBAction func recordBtnClicked(_ sender: Any) {
-        
+        if(RecordingService.instance.recordingState == true){
+            RecordingService.instance.stopRecord()
+            self.statusLabel.text = "Start your record"
+            recordBtn.setTitle("Record", for: .normal)
+        }else{
+            RecordingService.instance.startRecord()
+            statusLabel.text = "Recording..."
+            recordBtn.setTitle("Stop", for: .normal)
+        }
     }
     
 }
